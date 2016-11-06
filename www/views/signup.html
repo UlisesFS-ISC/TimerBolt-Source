@@ -1,0 +1,22 @@
+
+<ion-view view-title="Signup">
+    <ion-content class="padding">
+        <div class="list card">
+            <label class="item item-input">
+                <input type="text" placeholder="User name" ng-model=user.name>
+            </label>
+             <label class="item item-input">
+                <input type="password" placeholder="Password" ng-model=user.password ng-minlength="3">
+            </label>
+             <label class="item item-input">
+                <input type="password" placeholder="ConfirmPassword" ng-model="cpassword" ng-minlength="3">
+            </label>
+             <label class="item item-input">
+                <input type="email" placeholder="E-mail" ng-model=user.email ng-minlength="5">
+            </label>
+            <div class="padding">
+                <button class="button button-positive" ng-click="signup()" ng-disabled="!user.password || !user.name || !user.email|| user.password !== cpassword">Sign Up</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

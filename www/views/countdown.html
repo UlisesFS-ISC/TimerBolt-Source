@@ -1,0 +1,63 @@
+<ion-view view-title="Countdown ">
+		  <ion-content class="padding">
+			  <div class="progressContainer" >
+				  <div class="progress-wrapper">
+				<div class="progress ng-cloak" ng-style="getStyle()" >{{ timer.countStr }}</div>
+				<round-progress 
+					max="24"
+					current="timer.count.hours"
+					color="{{progressColors.barHours}}"
+					bgcolor="transparent"
+					semi="false"
+					rounded="true"
+					clockwise="true"
+					responsive="true">
+
+					<round-progress 
+						max="59"
+						current="timer.count.minutes"
+						color="{{progressColors.barMinutes}}"
+						bgcolor="transparent"
+						semi="false"
+						rounded="true"
+						clockwise="true"
+						responsive="true"
+						 offset="inherit">
+
+
+						<round-progress 
+							max="59"
+							current="timer.count.seconds"
+							color="{{progressColors.barSeconds}}"
+							bgcolor="transparent"
+							semi="false"
+							rounded="true"
+							clockwise="true"
+							responsive="true"
+							offset="inherit"></round-progress>
+					</round-progress>
+				</round-progress>
+			</div>
+			  </div>
+	  		<div class="row" id="inputDiv" ng-show="timerStatus===0">
+					   <label class=" item item-input col col-offset-33">
+						   <span class="input-labe col"></span>
+							<input type="number" max="24" min="0" ng-model="timer.count.hours" ng-change="updateTimerCount()">
+						</label>
+						 <label class=" item item-input col">
+							 <span class="input-label"></span>
+							<input type="number" max="59" min="0" ng-model="timer.count.minutes" ng-change="updateTimerCount()">
+						</label>
+						 <label class=" item item-input col ">
+							 <span class="input-label"></span>
+							<input type="number" max="59" min="0" ng-model="timer.count.seconds" ng-change="updateTimerCount()">
+						</label>
+						<br/>	
+			</div>
+			  <div class="row" id="buttonDiv">
+					<button class="button padding-vertical button-balanced col " ng-click="start(0)" ng-hide="timerStatus===1" ng-disabled="timer.count.seconds===0 && timer.count.minutes===0 && timer.count.hours===0" > Start</button>
+					<button class="button padding-vertical button-calm col" ng-click="pause()" ng-show="timerStatus===1">Pause</button>
+					<button class="button padding-vertical col-offset-25 button-assertive col" ng-click="stop()" ng-disabled="timerStatus===0"> Stop</button>
+			  </div>
+		  </ion-content>
+</ion-view> 

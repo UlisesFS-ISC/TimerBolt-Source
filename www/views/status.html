@@ -1,0 +1,39 @@
+<ion-view view-title="User status ">
+	<ion-header-bar align-title="center" class="bar-positive">
+		<h1 class="title">Member area </h1>
+		<div class="buttons">
+			<button class="button button-clear" ng-click="logout()">
+			</button>
+		</div>
+	</ion-header-bar>
+	<ion-content class="padding">
+		<div class="card">
+			<div class="item item-text-wrap">
+			<ion-list>
+				  <ion-item
+						ng-repeat="entry in memberinfo | limitTo: 4 |
+								   orderBy : entry.dateposted : true"
+						class="item-chat item-remove-animate item-avatar item-icon-right"
+						type="item-text-wrap">
+						<h2>{{entry.name}}</h2>
+					  	<p>{{entry.timeelapsed}}</p>
+					  	<p>{{entry.dateposted | limitTo : 25 : 0}}</p>
+						<i class="icon ion-chevron-right icon-accessory"></i>
+
+						<ion-option-button class="button-assertive" ng-click="remove(entry)">
+						  Delete
+					</ion-option-button>
+				  </ion-item>
+    		</ion-list>
+			</div>
+
+		</div>
+		<button class="button button-full button-balanced" ng-click="getInfo('chronoInfo')">Get activities </button>
+		<div class="row">
+		<button class="button button-small col  button-balanced" ng-click="getInfo('building')">Get alarm-timers </button>
+		<button class="button button-small col col-offset-33 button-balanced" ng-click="getInfo('building')">Get pomodoros </button>
+		</div>
+		<button class="button button-full button-positive" ng-click="logout()">Log-out
+		</button>
+	</ion-content>
+</ion-view>

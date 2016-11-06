@@ -1,0 +1,37 @@
+/* Empty. Add your own CSS if you like */
+.progressContainer{
+	width: 60%;
+	margin: 0 auto;
+}
+
+.progress{
+	position: absolute;
+	color: :#bbb;
+	font-weight: 100;
+	line-height: 1;
+}
+
+.progress-wrapper{
+	position:relative;
+}
+
+.clock{
+	position:relative;
+	width:80%; 
+	height:auto;
+}
+
+#buttonDiv{
+	width:100%;
+	height: auto;
+	padding: 0 5%;
+}
+
+#inputDiv{
+	width:80%;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+#inputDiv input{
+	font: 5px;
+}
