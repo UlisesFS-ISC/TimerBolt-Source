@@ -4,6 +4,6 @@ Credits to crisbeto for the "angular-svg-round-progressbar" add-on.
 
 # TO-DO
 -Pomodoro implementation(also being capable to store pomodoro runs).
--Custom alarms (with set timers that need user input to start and stores wheter you performed the activity tracking your time or you ignored the alarm).
+-Custom alarms (with set timers that need user input to start and stores whether you performed the activity tracking your time or you ignored the alarm).
 -Proper sound alarms.
 -Visual improvement (Animations).
